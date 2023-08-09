@@ -92,8 +92,19 @@ oluwaseun_omisakin = Programmer(
 # session.add(oluwaseun_omisakin)
 
 # To update a single record on the database
-programmer = session.query(Programmer).filter_by(id=10).first()
-programmer.famous_for = "World President"
+# programmer = session.query(Programmer).filter_by(id=10).first()
+# programmer.famous_for = "World President"
+
+# To update multiple records in a database
+people = session.query(Programmer)
+for person in people:
+    if person.gender == "F":
+        person.gender = "Female"
+    elif person.gender == "M":
+        person.gender = "Male"
+    else:
+        print("Gender not defined")
+    session.commit()
 
 # commit our session to the database
 session.commit()
