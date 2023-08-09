@@ -89,7 +89,11 @@ oluwaseun_omisakin = Programmer(
 # session.add(margaret_hamilton)
 # session.add(bill_gates)
 # session.add(tim_berners_lee)
-session.add(oluwaseun_omisakin)
+# session.add(oluwaseun_omisakin)
+
+# To update a single record on the database
+programmer = session.query(Programmer).filter_by(id=10).first()
+programmer.famous_for = "World President"
 
 # commit our session to the database
 session.commit()
