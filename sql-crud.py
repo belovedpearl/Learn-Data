@@ -107,7 +107,7 @@ for person in people:
     session.commit()
 
 # commit our session to the database
-session.commit()
+#session.commit()
 
 # query the database to find all Programmers
 programmers = session.query(Programmer)
